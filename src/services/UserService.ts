@@ -32,5 +32,13 @@ export class UserService {
     getAllUsers = () => {
         return this.db
     }
+
+    deleteUser = (name: string) => {
+        this.db = this.db.filter((value, index, arr) => {
+            return value.name != name
+        })
+        console.log('DB atualizado', this.db)
+        return this.db
+    }
 }
 
